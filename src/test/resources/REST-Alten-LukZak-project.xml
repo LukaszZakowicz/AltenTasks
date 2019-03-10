@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="39dbcfad-be12-4d2b-9a6c-63a4f9ca23f3" created="2.6.0" activeEnvironment="Default environment" name="REST Project 1" resourceRoot="" updated="2.6.0 2019-01-14T14:47:06Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="62d7e15f-5966-4077-983a-df1f3978eb0f" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Posts" path="/posts/" id="68263e84-b306-4467-970b-9a91117d263b">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Posts" id="2cb39160-0ce7-4c9a-ae81-39557e5285ef" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="bd9e4145-65d1-4a02-9fef-a6a008cb7025" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="dcf80383-931d-4bd4-925a-61ced365b599" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints/>
+    <con:resource name="/posts" path="/posts" id="0ffb528b-bed5-4928-9dd6-497e783595c2">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="GET" id="34d77671-0496-42e8-905d-ebd78a42bca2" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>userId</con:name>
+            <con:value>&lt;&lt;&lt;userId>>></con:value>
+            <con:style>QUERY</con:style>
+            <con:default>&lt;&lt;&lt;userId>>></con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="GET Request" id="e59326e9-fb84-4315-befa-97dd0c2076dd" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="d45b9f22-95b9-460b-be9e-eeb2edc1a717" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints/>
+    <con:resource name="/comments" path="/comments" id="ea60611e-ec8b-43b5-b951-8d97f99fd3c7">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="POST" id="fa2b5d6a-b6ca-424d-b196-a0358606d1e7" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element xmlns:com="https://jsonplaceholder.typicode.com/comments">com:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html; charset=utf-8</con:mediaType>
+          <con:status>500</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:request name="POST Request" id="32663110-b364-462d-b697-fd1e463c6c2d" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="c0e42fdf-9a4b-43b6-9407-ecf63e84bdf8" name="https://jsonplaceholder.typicode.com TestSuite">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="98e217ca-d5e2-4d1d-9493-cc8a10f8f90c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCaseAlten" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Request 1" id="2e60f567-19fc-43fd-b0ee-58da871789f3">
+        <con:settings/>
+        <con:config service="https://jsonplaceholder.typicode.com" resourcePath="/posts/" methodName="Posts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="bd9e4145-65d1-4a02-9fef-a6a008cb7025" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://jsonplaceholder.typicode.com/posts/</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="831dff33-b071-4271-be61-e391c44aeb8e" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="1326f924-8ea4-45c9-b96c-cef9ff3d14aa" name="Response SLA" disabled="true">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="22947330-3072-4e79-801d-f439555fa64d" name="JsonPath Match" disabled="true">
+              <con:configuration>
+                <path>$.[-1][userId]</path>
+                <content>10</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Property Transfer 1" id="14224606-0f6b-4abd-9b00-a3416807b814">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>TR</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Request 1</con:sourceStep>
+            <con:sourcePath>$..userId</con:sourcePath>
+            <con:targetType>Response</con:targetType>
+            <con:targetStep>#TestCase#</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>XPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script - get max userId" id="cb29c2c1-0c21-4dce-b006-5c491ca9939c">
+        <con:settings/>
+        <con:config>
+          <script>def userIDs = testRunner.testCase.getPropertyValue("Response")
+def list = userIDs [1..userIDs.length()-2].tokenize(',')*.trim()
+def ints = list.collect {it as Integer}
+
+Arrays.sort(ints)
+def max = ints[-1]
+testRunner.testCase.setPropertyValue("UserID", ""+max)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Property Transfer 2" id="306dde37-6f2e-40fb-bec2-eba6b4f1bf3b">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>TR2</con:name>
+            <con:sourceType>UserID</con:sourceType>
+            <con:sourceStep>#TestCase#</con:sourceStep>
+            <con:sourcePath/>
+            <con:targetType>userId</con:targetType>
+            <con:targetStep>Request 2</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Request 2" id="4324985c-4ca1-4d16-b2a0-08321a4b2448">
+        <con:settings/>
+        <con:config service="REST Service 1" resourcePath="/posts" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 2" id="e59326e9-fb84-4315-befa-97dd0c2076dd" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="c4381546-9030-41af-9720-489b59f81c1e" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="userId" value="10" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Property Transfer 3" id="f860a59a-95e4-44f8-9d66-7dc23c915e02">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>TR3</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Request 2</con:sourceStep>
+            <con:sourcePath>$..id</con:sourcePath>
+            <con:targetType>Response</con:targetType>
+            <con:targetStep>#TestCase#</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script - get max id" id="b0c57a9a-3aa4-4ec3-8442-ed270e45ae87">
+        <con:settings/>
+        <con:config>
+          <script>def IDs = testRunner.testCase.getPropertyValue("Response")
+def list = IDs [1..IDs.length()-2].tokenize(',')*.trim()
+def ints = list.collect {it as Integer}
+
+Arrays.sort(ints)
+def max = ints[-1]
+testRunner.testCase.setPropertyValue("ID", ""+max)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Property Transfer 4" id="240c56fe-3609-4b52-80ae-95c98ffefa0b">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>TR4</con:name>
+            <con:sourceType>ID</con:sourceType>
+            <con:sourceStep>#TestCase#</con:sourceStep>
+            <con:sourcePath/>
+            <con:targetType>Request</con:targetType>
+            <con:targetStep>POST</con:targetStep>
+            <con:targetPath>$..postId</con:targetPath>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="POST" id="1d3a7e27-df1e-4b46-afff-b4e2dfeea46c">
+        <con:settings/>
+        <con:config service="REST Service 2" resourcePath="/comments" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="POST" id="32663110-b364-462d-b697-fd1e463c6c2d" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request>{"postId":"100","id":34,"name":"myName","email":"lukasz.zakowicz@alten.com","body":"my comment"}</con:request>
+            <con:originalUri>https://jsonplaceholder.typicode.com/comments</con:originalUri>
+            <con:assertion type="JsonPath Match" id="c7bd7d6c-336b-4d45-9b7e-67c0124985f0" name="Match content of [postId]">
+              <con:configuration>
+                <path>$['postId']</path>
+                <content>100</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6814ee76-05c3-4467-b409-dc177be6d251" name="Match content of [name]">
+              <con:configuration>
+                <path>$['name']</path>
+                <content>myName</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2a16e1ef-940e-439d-8088-e854fef36266" name="Match content of [email]">
+              <con:configuration>
+                <path>$['email']</path>
+                <content>lukasz.zakowicz@alten.com</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d1139d0b-c410-4cf9-9e2e-5de17fc384e9" name="Match content of [body]">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>my comment</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>Response</con:name>
+          <con:value>[91, 92, 93, 94, 95, 96, 97, 98, 99, 100]</con:value>
+        </con:property>
+        <con:property>
+          <con:name>UserID</con:name>
+          <con:value>10</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ID</con:name>
+          <con:value>100</con:value>
+        </con:property>
+      </con:properties>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>cb29c2c1-0c21-4dce-b006-5c491ca9939c</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>14224606-0f6b-4abd-9b00-a3416807b814</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>306dde37-6f2e-40fb-bec2-eba6b4f1bf3b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>f860a59a-95e4-44f8-9d66-7dc23c915e02</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>b0c57a9a-3aa4-4ec3-8442-ed270e45ae87</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>240c56fe-3609-4b52-80ae-95c98ffefa0b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
